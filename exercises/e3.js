@@ -1,4 +1,3 @@
-
 // EXERCISE 3
 // Make sure to solve two parts beneath
 
@@ -9,7 +8,12 @@
  * */
 
 export function getAverage(array) {
-  // Your code goes here...
+    var total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+    var average = total / array.length;
+    return average;
 
 }
 
@@ -19,11 +23,17 @@ export function getAverage(array) {
  * Create a getStringSum(str) function that returns the sum of any integers that are in the string.
  * Example1: getStringSum("GH2U87A") => 17
  * Example2: getStringSum("GHIUJUHSG") => 0
- * */ 
+ * */
 
 export function getStringSum(str) {
-  // Your code goes here...
-
+    const strArr = str.split("");
+    let res = 0;
+    for (let i = 0; i < strArr.length; i++) {
+        if (+strArr[i]) {
+            res += +strArr[i];
+        };
+    };
+    return res;
 }
 
 
