@@ -1,4 +1,3 @@
-
 // EXERCISE 16
 // Please, read the exercise-info/flat.md to get the initial data of what is the expected result of this exercise.
 // Array example: flatArraysData in /data/data.js
@@ -6,8 +5,18 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
-
+    let temp = [];
+    for (let i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            let tempArr = array[i];
+            for (let j = 0; j < tempArr.length; j++) {
+                temp.push(tempArr[j]);
+            }
+        } else {
+            temp.push(array[i]);
+        }
+    }
+    return temp;
 }
 
 
